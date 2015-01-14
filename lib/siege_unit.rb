@@ -1,0 +1,2 @@
+class SiegeUnit < Unit
+end

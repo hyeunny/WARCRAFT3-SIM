@@ -1,0 +1,2 @@
+class LightUnit < Unit 
+end

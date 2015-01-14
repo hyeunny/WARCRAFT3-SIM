@@ -1,4 +1,4 @@
-class Peasant
+class Peasant < LightUnit
   attr_reader :health_points, :attack_power
   def initialize
     @health_points = 35

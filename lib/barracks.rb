@@ -1,9 +1,11 @@
-class Barracks
-  attr_accessor :gold, :food
+class Barracks < Building
+  attr_accessor :gold, :food, :lumber
 
   def initialize
+    super
     @gold = 1000
     @food = 80
+    @lumber = 500
   end
 
   def train_footman
@@ -26,5 +28,16 @@ class Barracks
 
   def can_train_peasant?
     self.gold >= 90 && self.food >= 5
+  end
+
+  def train_siege_engine
+    return nil if can_train_siege_engine? == false
+    self.gold -= 200
+    self.food -= 3
+    self.lumber -= 60
+  end
+
+  def can_train_siege_engine?
+    self.gold >= 200 && self.food >= 3 && self.lumber >= 60
   end
 end

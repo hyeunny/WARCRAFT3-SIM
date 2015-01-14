@@ -1,6 +1,6 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
 
-class Footman < Unit
+class Footman < LightUnit
   attr_accessor :health_points, :attack_power
   def initialize
     @health_points = 60
@@ -13,9 +13,10 @@ class Footman < Unit
     self.health_points -= attack_power
   end
 
-  def attack!(enemy)
-    enemy.damage(10)
-  end
+  #corey uncommented this method
+  # def attack!(enemy)
+  #    enemy.damage(10)
+  # end
 
 
 end

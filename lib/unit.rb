@@ -11,6 +11,17 @@ class Unit
   end
 
   def attack!(enemy)
+    return nil if self.dead?
+    return nil if enemy.dead?
     enemy.damage(self.attack_power)
   end
+
+  def dead?
+    self.health_points <= 0
+  end
+
+  # def attack!(enemy)
+  #   return nil if self.dead?
+  #   return nil if enemy.dead?
+  # end
 end
